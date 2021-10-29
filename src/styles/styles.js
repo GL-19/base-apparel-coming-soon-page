@@ -1,31 +1,20 @@
 import styled from "styled-components";
 
 export const Main = styled.main`
+	width: 100vw;
+	height: 100vh;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 
-	header {
-		display: flex;
-		justify-content: flex-start;
-		width: 100%;
-		padding: 35px;
-	}
-`;
-
-export const Logo = styled.img`
-	width: 120px;
-`;
-
-export const MobileImg = styled.img`
-	@media screen and (min-width: 850px) {
-		display: none;
-	}
-`;
-
-export const DesktopImg = styled.img`
-	display: none;
-	@media screen and (min-width: 850px) {
-		display: block;
+	@media screen and (min-width: 700px) {
+		display: grid;
+		grid-template-columns: 1.2fr 0.8fr;
+		grid-template-rows: 100px 1fr;
+		grid-template-areas:
+			"header image"
+			"main image";
+		justify-items: center;
 	}
 `;
