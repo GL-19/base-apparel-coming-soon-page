@@ -13,8 +13,10 @@ export const Main = styled.main`
 		grid-template-columns: 1.2fr 0.8fr;
 		grid-template-rows: 100px 1fr;
 		grid-template-areas:
-			"header image"
+			"logo image"
 			"main image";
 		justify-items: center;
 	}
 `;
+
+export const Logo = styled.img``;

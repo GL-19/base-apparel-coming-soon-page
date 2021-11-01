@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Input, Button, FormWrapper } from "./styles";
+import { Input, Button, FormWrapper, Form } from "./styles";
 
 import iconArrow from "../../images/icon-arrow.svg";
 
@@ -13,6 +13,13 @@ export function LeadForm() {
 		console.log(email);
 	}, [email]);
 
+	function handleChange(event) {
+		if (invalidEmail) {
+			setInvalidEmail(false);
+		}
+		setEmail(event.target.value);
+	}
+
 	function handleSubmit(event) {
 		event.preventDefault();
 
@@ -25,17 +32,21 @@ export function LeadForm() {
 	}
 
 	return (
-		<FormWrapper onSubmit={handleSubmit}>
-			<Input
-				type="text"
-				value={email}
-				placeholder="Email Address"
-				onChange={(event) => setEmail(event.target.value)}
-				invalidInput={invalidEmail}
-			/>
-			<Button type="submit">
-				<img src={iconArrow} alt="arrow" />
-			</Button>
+		<FormWrapper>
+			<Form onSubmit={handleSubmit}>
+				<Input
+					type="text"
+					value={email}
+					placeholder="Email Address"
+					onChange={handleChange}
+					invalidInput={invalidEmail}
+				/>
+				<Button type="submit">
+					<img src={iconArrow} alt="arrow" />
+				</Button>
+				<br />
+			</Form>
+			{invalidEmail ? <p>Please provide a valid email</p> : ""}
 		</FormWrapper>
 	);
 }

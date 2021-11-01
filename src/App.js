@@ -1,10 +1,11 @@
-import { Main } from "./styles/styles";
-import { HeroImage, Header, HeroMain } from "./components";
+import { Main, Logo } from "./styles/styles";
+import { HeroImage, HeroMain } from "./components";
+import logo from "./images/logo.svg";
 
 function App() {
 	return (
 		<Main>
-			<Header area="header" />
+			<Logo src={logo} alt="logo" />
 			<HeroImage area="image" />
 			<HeroMain area="main" />
 		</Main>
