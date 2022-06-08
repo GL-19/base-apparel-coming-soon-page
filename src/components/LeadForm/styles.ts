@@ -4,13 +4,15 @@ import iconError from "../../images/icon-error.svg";
 export const FormWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	width: 100%;
 
 	p {
 		margin-top: 5px;
 		padding: 0 25px;
 
 		color: hsl(0, 93%, 68%);
-		font-size: 13px;
+		font-size: 0.8rem;
 		text-align: left;
 	}
 `;
@@ -19,6 +21,7 @@ export const Form = styled.form`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	width: 100%;
 `;
 
 export const Button = styled.button`
@@ -41,7 +44,7 @@ interface InputProps {
 }
 
 export const Input = styled.input<InputProps>`
-	width: 280px;
+	width: 100%;
 	height: 50px;
 	padding: 25px;
 
@@ -62,9 +65,5 @@ export const Input = styled.input<InputProps>`
 	&::placeholder {
 		color: hsl(0, 36%, 70%);
 		font-weight: 600;
-	}
-
-	@media screen and (min-width: 700px) {
-		width: 350px;
 	}
 `;

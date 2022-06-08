@@ -1,126 +1,120 @@
 import styled from "styled-components";
 
-import bg from "../images/bg-pattern-desktop.svg";
+const laptop = "1080px";
 
-export const Main = styled.main`
-	width: 100vw;
-	height: 100vh;
-
+export const GridContainer = styled.div`
 	display: grid;
-	grid-template-columns: 1.2fr 0.8fr;
-	grid-template-areas: "main hero";
+	grid-template-columns: 60% 40%;
 
-	background: url(${bg}) no-repeat;
+	width: 100%;
+	height: 100%;
 
-	aside {
-		grid-area: "hero";
-		width: 100%;
-		height: 100%;
-		img {
-			width: 100%;
-			height: 100%;
-		}
-	}
-
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: ${laptop}) {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+	}
+`;
 
-		aside {
+export const Aside = styled.aside`
+	width: 100%;
+	height: 100%;
+
+	img {
+		width: 100%;
+		height: 100%;
+	}
+
+	@media screen and (max-width: ${laptop}) {
+		display: none;
+
+		img {
 			display: none;
-			img {
-				display: none;
-			}
 		}
 	}
 `;
 
-export const Content = styled.div`
+export const Main = styled.main`
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
+	justify-content: flex-start;
 
-	grid-area: "main";
+	width: 100%;
+
+	header,
+	article {
+		padding: 0 8rem;
+
+		@media screen and (max-width: ${laptop}) {
+			padding: 0 1.5rem;
+		}
+	}
 
 	header {
 		width: 100%;
-		height: 100px;
+		height: 8rem;
+
+		display: flex;
+		align-items: center;
+
+		@media screen and (max-width: ${laptop}) {
+			justify-content: center;
+		}
 	}
 
 	article {
 		width: 100%;
+		height: 100%;
 		margin-top: 50px;
+
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+
+		@media screen and (max-width: ${laptop}) {
+			justify-content: center;
+			align-items: center;
+			margin-bottom: 5rem;
+		}
+	}
+
+	div {
+		max-width: 500px;
 	}
 `;
 
-export const Wrapper = styled.div`
-	padding: 0 125px;
-	height: 100%;
-`;
-
-export const HeaderContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
-
-	width: 100%;
-	max-width: 450px;
-	height: 100%;
-`;
-
-export const ArticleContainer = styled.div`
-	display: flex;
-	flex-direction: column;
-	align-items: flex-start;
-	justify-content: center;
-	width: 100%;
-	height: 100%;
-	max-width: 450px;
+export const TextWrapper = styled.div`
+	color: var(--desatured-red);
 
 	p {
-		font-size: 16px;
-		color: hsl(0, 36%, 70%);
-
-		line-height: 24px;
-
-		margin: 32px 0;
+		margin: 2rem 0;
+		line-height: 1.5rem;
 	}
 
 	h1 {
-		font-size: 64px;
+		font-size: 4rem;
 		font-weight: 300;
-		color: hsl(0, 36%, 70%);
 
-		line-height: 64px;
-		letter-spacing: 16px;
+		line-height: 4rem;
+		letter-spacing: 1rem;
 
 		strong {
 			font-weight: 600;
-			color: black;
+			color: hsl(0, 6%, 24%);
 		}
 	}
 
-	@media screen and (max-width: 600px) {
-		p {
-			margin: 24px 0;
-			text-align: center;
-		}
-
-		h1 {
-			font-size: 48px;
-			line-height: 48px;
-			letter-spacing: 16px;
-
-			text-align: center;
-		}
+	@media screen and (max-width: ${laptop}) {
+		justify-content: center;
+		text-align: center;
 	}
 `;
 
 export const MobileImg = styled.img`
 	display: none;
-	@media screen and (max-width: 600px) {
+
+	@media screen and (max-width: ${laptop}) {
 		display: block;
 		width: 100%;
 		height: auto;
