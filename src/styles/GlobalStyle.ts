@@ -13,6 +13,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   html {
+    font-size: 16px;
+
     @media (max-width: 1080px) {
       font-size: 93.75%;
     }
@@ -28,7 +30,6 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
 
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 16px;
 
     background: url(${bg}) no-repeat;
   }

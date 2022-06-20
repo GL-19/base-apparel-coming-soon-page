@@ -1,3 +1,4 @@
+/* eslint-disable no-useless-escape */
 import { ChangeEvent, FormEvent, useEffect, useState } from "react";
 import { Input, Button, FormWrapper, Form } from "./styles";
 
